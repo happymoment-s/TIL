@@ -1,17 +1,17 @@
 # Today I Learned
 
-ÇÁ·Î±×·¡¹Ö °ü·ÃÇÏ¿© »õ·Î ¹è¿î Ç×¸ñµéÀ» Á¤¸®ÇÏ´Â °÷ÀÔ´Ï´Ù.
+í”„ë¡œê·¸ë˜ë° ê´€ë ¨í•˜ì—¬ ìƒˆë¡œ ë°°ìš´ í•­ëª©ë“¤ì„ ì •ë¦¬í•˜ëŠ” ê³³ì…ë‹ˆë‹¤.
 
-## ½ºÅÍµğ Ç×¸ñ
+## ìŠ¤í„°ë”” í•­ëª©
 - Android
 - Android Studio
 - Gradle
-- Eclipse
+- ~~Eclipse~~
 - Git
 
-## ÀÛ¼º ±ÔÄ¢
+## ì‘ì„± ê·œì¹™
 - [Github Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/)
 
-## Âü°í ÆäÀÌÁö
+## ì°¸ê³  í˜ì´ì§€
 - [thoughtbot TIL](https://github.com/thoughtbot/til)
 - [milooy TIL] (https://github.com/milooy/TIL)
