@@ -3,6 +3,7 @@
 프로그래밍 관련하여 새로 배운 항목들을 정리하는 곳입니다.
 
 ## 스터디 항목
+- Java
 - Android
 - Android Studio
 - Gradle
