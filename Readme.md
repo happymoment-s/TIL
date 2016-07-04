@@ -11,7 +11,9 @@
 - Git
 
 ## 작성 규칙
-- [Github Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/)
+- [Github Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/) 참조
+- .md 파일명 규칙 : [대분류][소분류] 제목
+- commit 규칙 : [대분류][소분류] 제목
 
 ## 참고 페이지
 - [thoughtbot TIL](https://github.com/thoughtbot/til)
