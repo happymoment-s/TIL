@@ -1,46 +1,47 @@
-# aar ¶Ç´Â jar ÆÄÀÏ import ÇÏ´Â ¹æ¹ı
+# aar ë˜ëŠ” jar íŒŒì¼ import í•˜ëŠ” ë°©ë²•
 
-## 1. aar ÆÄÀÏ import
+## 1. aar íŒŒì¼ import
 
-### 1.1. Module Settings ¹æ¹ı
-- Âü°í»çÀÌÆ® : [Adding AAR Files to Your Android Studio Project] (http://docs.millennialmedia.com/android-ad-sdk/adding-aar-files.html) 
+### 1.1. Module Settings ë°©ë²•
+- ì°¸ê³ ì‚¬ì´íŠ¸ : [Adding AAR Files to Your Android Studio Project] (http://docs.millennialmedia.com/android-ad-sdk/adding-aar-files.html) 
 
-1. application ÇÁ·ÎÁ§Æ® ¸¶¿ì½º ¿ìÃø Å¬¸¯ -> Open Module Settings Å¬¸¯
-2. ÁÂÃø »ó´Ü¿¡ ÃÊ·Ï»ö '+' ¹öÆ°(New Module) Å¬¸¯
-3. 'Import .JAR or .AAR Package' ¼±ÅÃÈÄ ¿ìÃø ÇÏ´Ü¿¡ 'Next' ¹öÆ° Å¬¸¯ -> ... ¹öÆ°À¸·Î aar ÆÄÀÏ ¼±ÅÃ -> 'Finish' ¹öÆ° Å¬¸¯
-4. ¿ìÃø »ó´Ü¿¡ 'Dependencies' Å¬¸¯ -> ¿ìÃø »ó´Ü¿¡ ÃÊ·Ï»ö '+' ¹öÆ° Å¬¸¯ -> '3. Module Dependency' Å¬¸¯ -> aar Å¬¸¯
+1. application í”„ë¡œì íŠ¸ ë§ˆìš°ìŠ¤ ìš°ì¸¡ í´ë¦­ -> Open Module Settings í´ë¦­
+2. ì¢Œì¸¡ ìƒë‹¨ì— ì´ˆë¡ìƒ‰ '+' ë²„íŠ¼(New Module) í´ë¦­
+3. 'Import .JAR or .AAR Package' ì„ íƒí›„ ìš°ì¸¡ í•˜ë‹¨ì— 'Next' ë²„íŠ¼ í´ë¦­ -> ... ë²„íŠ¼ìœ¼ë¡œ aar íŒŒì¼ ì„ íƒ -> 'Finish' ë²„íŠ¼ í´ë¦­
+4. ìš°ì¸¡ ìƒë‹¨ì— 'Dependencies' í´ë¦­ -> ìš°ì¸¡ ìƒë‹¨ì— ì´ˆë¡ìƒ‰ '+' ë²„íŠ¼ í´ë¦­ -> '3. Module Dependency' í´ë¦­ -> aar í´ë¦­
 
-### 1.2. gradle ¼³Á¤ ¹æ¹ı
-- Âü°í»çÀÌÆ® : [Reference a local .aar in your Android project] (http://kevinpelgrims.com/blog/2014/05/18/reference-a-local-aar-in-your-android-project/)
-- ÇØ´ç ¹æ½ÄÀº ½ºÅ©¸³Æ®·Î µ¿Àû library ÆÄÀÏ import ¹æ½ÄÀ¸·Î »ç¿ë°¡´ÉÇÒ °ÍÀ¸·Î º¸ÀÎ´Ù.
+### 1.2. gradle ì„¤ì • ë°©ë²•
+- ì°¸ê³ ì‚¬ì´íŠ¸ : [Reference a local .aar in your Android project] (http://kevinpelgrims.com/blog/2014/05/18/reference-a-local-aar-in-your-android-project/)
+- í•´ë‹¹ ë°©ì‹ì€ ìŠ¤í¬ë¦½íŠ¸ë¡œ ë™ì  library íŒŒì¼ import ë°©ì‹ìœ¼ë¡œ ì‚¬ìš©ê°€ëŠ¥í•  ê²ƒìœ¼ë¡œ ë³´ì¸ë‹¤.
 
-1. aar ÆÄÀÏÀ» application ÇÁ·ÎÁ§Æ® ¾È¿¡ ¿øÇÏ´Â À§Ä¡¿¡ º¹»ç, ÀÏ¹İÀûÀ¸·Î [app]/libs Æú´õ³ª [app]/aars Æú´õ¸¦ »ı¼ºÇØ¼­ ³Ö´Â´Ù.
-2. appÀÇ build.gradle¿¡¼­ ´ÙÀ½°ú °°ÀÌ ¼³Á¤
+1. aar íŒŒì¼ì„ application í”„ë¡œì íŠ¸ ì•ˆì— ì›í•˜ëŠ” ìœ„ì¹˜ì— ë³µì‚¬, ì¼ë°˜ì ìœ¼ë¡œ [app]/libs í´ë”ë‚˜ [app]/aars í´ë”ë¥¼ ìƒì„±í•´ì„œ ë„£ëŠ”ë‹¤.
+2. appì˜ build.gradleì—ì„œ ë‹¤ìŒê³¼ ê°™ì´ ì„¤ì •
 ```Gradle
 repositories {
     flatDir {
-        dirs 'libs' // aarÆÄÀÏÀÌ µé¾îÀÖ´Â Æú´õ À§Ä¡
+        dirs 'libs' // aaríŒŒì¼ì´ ë“¤ì–´ìˆëŠ” í´ë” ìœ„ì¹˜
     }
 }
 
 dependencies {
     compile(name:'libraryfilename', ext:'aar')
-    // ¶Ç´Â
-    // compile 'library package name:library name:library version@aar' // ex) 'com.kevinpelgrims.library:library:1.0.0@aar' 
+    // ë˜ëŠ”
+    // compile 'library group name(package name):library name:library version@aar' 
+    // ex) 'com.kevinpelgrims.library:library:1.0.0@aar' 
 }
 ```
 
 
-## 2. jar ÆÄÀÏ import
+## 2. jar íŒŒì¼ import
 
-### 2.1. Module Settings ¹æ¹ı
-1.1. ÂüÁ¶
+### 2.1. Module Settings ë°©ë²•
+1.1. ì°¸ì¡°
 
-### 2.2. ¿À¸¥ÂÊ ¹öÆ°À¸·Î ¼³Á¤ ¹æ¹ı
-1. jar ÆÄÀÏÀ» Æ¯Á¤ À§Ä¡¿¡ º¹»ç, ÀÏ¹İÀûÀ¸·Î [app]/libs Æú´õ
-2. jar ÆÄÀÏ ¿À¸¥ÂÊ ¹öÆ° Å¬¸¯ -> 'Add As Library...' ¹öÆ° Å¬¸¯
+### 2.2. ì˜¤ë¥¸ìª½ ë²„íŠ¼ìœ¼ë¡œ ì„¤ì • ë°©ë²•
+1. jar íŒŒì¼ì„ íŠ¹ì • ìœ„ì¹˜ì— ë³µì‚¬, ì¼ë°˜ì ìœ¼ë¡œ [app]/libs í´ë”
+2. jar íŒŒì¼ ì˜¤ë¥¸ìª½ ë²„íŠ¼ í´ë¦­ -> 'Add As Library...' ë²„íŠ¼ í´ë¦­
 
-### 2.3. gradle ¼³Á¤ ¹æ¹ı
+### 2.3. gradle ì„¤ì • ë°©ë²•
 ```Gradle
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
