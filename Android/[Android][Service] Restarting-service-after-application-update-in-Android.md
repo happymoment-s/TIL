@@ -2,7 +2,7 @@
 
 앱을 업데이트 하게될 경우 백그라운드 서비스가 죽게된다. 그때 백그라운드 서비스 다시 살리는 방법이다.
 
-(테스트하지 못함, 앱 업데이트시 Alarm도 같이 없어지는지 확인 필요)
+테스트 완료, 알람은 앱을 업데이트해도 사라지지 않는다.
 
 - [참조사이트] (https://andreynovikov.info/programming-android-updated-service-restart-en.html)
 
