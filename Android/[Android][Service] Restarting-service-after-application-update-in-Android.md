@@ -36,7 +36,7 @@ public class AppCycleReceiver extends BroadcastReceiver {
         String action = intent.getAction();
         if (Intent.ACTION_PACKAGE_REPLACED.equals(action)){
             String packageName = intent.getData().getSchemeSpecificPart();
-            if (context.getPackageName().equals(packageName) {
+            if (context.getPackageName().equals(packageName)) {
               // service start  
             }
         }
