@@ -1,7 +1,7 @@
-# Android Service Á¾·ùÀÎ START_STICKY ÀÌ½´
+# Android Service ì¢…ë¥˜ì¸ START_STICKY ì´ìŠˆ
 
 
-## ¼³¸í
+## ì„¤ëª…
 ```
 int START_STICKY
 Constant to return from onStartCommand(Intent, int, int): if this service's process is killed while it is started (after returning from onStartCommand(Intent, int, int)), then leave it in the started state but don't retain this delivered intent. Later the system will try to re-create the service. Because it is in the started state, it will guarantee to call onStartCommand(Intent, int, int) after creating the new service instance; if there are not any pending start commands to be delivered to the service, it will be called with a null intent object, so you must take care to check for this.
@@ -9,16 +9,16 @@ Constant to return from onStartCommand(Intent, int, int): if this service's proc
 This mode makes sense for things that will be explicitly started and stopped to run for arbitrary periods of time, such as a service performing background music playback.
 ```
 
-* ¼­ºñ½º°¡ process kill µÇ¾úÀ» ¶§ ¿ÏÀüÈ÷ Á×´Â(onDestory)°ÍÀÌ ¾Æ´Ï¶ó »ì¾ÆÀÖ´Â ÇüÅÂÀÇ ¼³Á¤
+* ì„œë¹„ìŠ¤ê°€ process kill ë˜ì—ˆì„ ë•Œ ì™„ì „íˆ ì£½ëŠ”(onDestory)ê²ƒì´ ì•„ë‹ˆë¼ ì‚´ì•„ìˆëŠ” í˜•íƒœì˜ ì„¤ì •
 
-## ÄÚµå ±¸Çö
+## ì½”ë“œ êµ¬í˜„
 ```Java
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         return START_STICKY;
     }
 ```
-¶Ç´Â
+ë˜ëŠ”
 ```Java
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
@@ -26,10 +26,10 @@ This mode makes sense for things that will be explicitly started and stopped to 
     }
 ```
 
-* return START_STICKY; ¿Í return super.onStartCommand(intent, flags, startId); ´Â µ¿ÀÏÇÑ °ªÀ» ¸®ÅÏÇÑ´Ù.
+* return START_STICKY; ì™€ return super.onStartCommand(intent, flags, startId); ëŠ” ë™ì¼í•œ ê°’ì„ ë¦¬í„´í•œë‹¤.
 
-## Ãß°¡ »çÇ×
-* os 4.4 ¹öÀü¿¡¼­ START_STICKY¸¦ »ç¿ëÇÔ¿¡µµ ºÒ±¸ÇÏ°í ¼­ºñ½º°¡ »ì¾Æ³ªÁö ¾Ê´Â ¹ö±×°¡ Á¸ÀçÇÏ¿©, onTaskRemoved() È£Ãâ½Ã ¾Ë¶÷À» ¼³Á¤ÇÏ¿© ¼­ºñ½º¸¦ ´Ù½Ã »ì¸®´Â ÄÚµå°¡ Ãß°¡ ÇÊ¿ä.
+## ì¶”ê°€ ì‚¬í•­
+* os 4.4 ë²„ì „ì—ì„œ START_STICKYë¥¼ ì‚¬ìš©í•¨ì—ë„ ë¶ˆêµ¬í•˜ê³  ì„œë¹„ìŠ¤ê°€ ì‚´ì•„ë‚˜ì§€ ì•ŠëŠ” ë²„ê·¸ê°€ ì¡´ì¬í•˜ì—¬, onTaskRemoved() í˜¸ì¶œì‹œ ì•ŒëŒì„ ì„¤ì •í•˜ì—¬ ì„œë¹„ìŠ¤ë¥¼ ë‹¤ì‹œ ì‚´ë¦¬ëŠ” ì½”ë“œê°€ ì¶”ê°€ í•„ìš”.
 ```Java
     @Override
     public void onTaskRemoved(Intent rootIntent) {
@@ -45,8 +45,8 @@ This mode makes sense for things that will be explicitly started and stopped to 
 ```
 
 
-## Âü°í »çÀÌÆ®
+## ì°¸ê³  ì‚¬ì´íŠ¸
 
 - [stackoverflow start-sticky-does-not-work-on-android-kitkat-edit-and-jelly-bean](http://stackoverflow.com/questions/20636330/start-sticky-does-not-work-on-android-kitkat-edit-and-jelly-bean)
-- [AltBeacon github service ºÎºĞ](https://github.com/AltBeacon/android-beacon-library/blob/master/src/main/java/org/altbeacon/beacon/service/BeaconService.java)
- - [Google developer Service](https://developer.android.com/reference/android/app/Service.html)
+- [AltBeacon github service ë¶€ë¶„](https://github.com/AltBeacon/android-beacon-library/blob/master/src/main/java/org/altbeacon/beacon/service/BeaconService.java)
+- [Google developer Service](https://developer.android.com/reference/android/app/Service.html)
