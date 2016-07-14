@@ -1,18 +1,18 @@
 # Android Low Memory Killer
 
-## killer¿¡ ÀÇÇØ Á¦°ÅµÇ´Â ÇÁ·Î¼¼½º
+## killerì— ì˜í•´ ì œê±°ë˜ëŠ” í”„ë¡œì„¸ìŠ¤
 1. Service
 2. Alarm
 
-## À¯Áö ¹æ¹ı
+## ìœ ì§€ ë°©ë²•
 ### service
-- START_STICKY »ç¿ë
-- HeartBeat ¾Ë¶÷ µî·Ï (¼­ºñ½º°¡ ±¸µ¿ÁßÀÎÁö È®ÀÎÇÏ¿© Á×¾úÀ¸¸é ´Ù½Ã »ì¸®´Â ¿ªÇÒ)
-  - [TIL START_STICKY](https://github.com/happymoment-s/TIL/blob/master/Android/%5BAndroid%5D%5BService%5D%20START_STICKY.md)
-- [startForeground()](https://developer.android.com/reference/android/app/Service.html#startForeground%28int,%20android.app.Notification%29) »ç¿ëÀ¸·Î foreground »óÅÂ À¯Áö
+- START_STICKY ì‚¬ìš©
+   - [TIL START_STICKY](https://github.com/happymoment-s/TIL/blob/master/Android/%5BAndroid%5D%5BService%5D%20START_STICKY.md)
+- HeartBeat ì•ŒëŒ ë“±ë¡ (ì„œë¹„ìŠ¤ê°€ êµ¬ë™ì¤‘ì¸ì§€ í™•ì¸í•˜ì—¬ ì£½ì—ˆìœ¼ë©´ ë‹¤ì‹œ ì‚´ë¦¬ëŠ” ì—­í• )
+- [startForeground()](https://developer.android.com/reference/android/app/Service.html#startForeground%28int,%20android.app.Notification%29) ì‚¬ìš©ìœ¼ë¡œ foreground ìƒíƒœ ìœ ì§€
 
 ### Alarm
- - Ã£´ÂÁß..¤Ğ
+ - ì°¾ëŠ”ì¤‘..ã… 
 
-## Âü°í »çÀÌÆ®
-- [¾Èµå·ÎÀÌµå Ä¿³Î ºĞ¼®](http://www.ikpu.ac.kr/clcms/contents/0000000206//07/07_10.htm)
+## ì°¸ê³  ì‚¬ì´íŠ¸
+- [ì•ˆë“œë¡œì´ë“œ ì»¤ë„ ë¶„ì„](http://www.ikpu.ac.kr/clcms/contents/0000000206//07/07_10.htm)
