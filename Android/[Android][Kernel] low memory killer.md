@@ -18,3 +18,4 @@
 - [안드로이드 커널 분석](http://www.ikpu.ac.kr/clcms/contents/0000000206//07/07_10.htm)
 - [Effective Handling of Low Memory
 Scenarios in Android](http://www.it.iitb.ac.in/frg/wiki/images/f/f4/113050076_Rajesh_Prodduturi_Stage-01_report_8_113050076_stage01.pdf)
+- [stack](http://stackoverflow.com/questions/15862651/android-kills-broadcast-receivers-on-system-low-memory)
