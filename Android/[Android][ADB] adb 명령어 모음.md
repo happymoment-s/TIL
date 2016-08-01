@@ -18,3 +18,8 @@ adb shell am stopservice [INTENT]
 ```
 adb install [apk파일 경로]
 ```
+
+## app disable 설정(삼성 스마트매니저 절전상태)
+```
+adb shell am [package명]
+```
