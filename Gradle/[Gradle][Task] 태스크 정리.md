@@ -35,7 +35,7 @@ A.dependsOn B
 A.mustRunAfter B
 ```
 * 위와 같이 설정 후 gradlew A 라고 실행했을 경우 B 다음 A가 실행되는것이 아니라 그냥 A만 실행된다.
-* gradlew A B 라고 실행했을 경우 두개의 태스크가 동시에 실행되니, B다음 A가 실행되게 해주는 역할밖에 하지 않는다.
+gradlew A B 라고 실행했을 경우 두개의 태스크가 동시에 실행되니, B다음 A가 실행되게 해주는 역할밖에 하지 않는다.
 --------
 ```
 A.dependsOn B
