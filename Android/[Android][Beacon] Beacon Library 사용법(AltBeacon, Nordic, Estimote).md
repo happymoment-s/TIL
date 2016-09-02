@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
 * BeaconManager 싱글턴으로 객체 생성후 bind 하면 callback으로 onBeaconServiceConnect() 호출됨
 * background 스캔 적용시 Application단에서 구현하면 됨(체크 필요)   
 ---
----
+
 
 ## 2. Nordic Library
 
@@ -142,8 +142,43 @@ public class MainActivity extends AppCompatActivity implements BeaconServiceConn
 * Foreground에서만 지원, Background, boot complete 지원하지 않음
 * 서비스 정상 시작되면 앱 상단에 "Beacons Service is running" 노티바 생성됨
 * permission aar 파일에서 제공하지 않음
-* 스캔시 2초마다 수신한 스캔정보를 배열로 내려줌 
----
+* 스캔시 2초마다 수신한 스캔정보를 배열로 내려줌
+
 ---
 ## 3. Estimote Library
+### 참고 사이트
+* [Estimote 공식 사이트](http://developer.estimote.com/android/tutorial/part-1-setting-up/#add-estimote-sdk)
+* [Sample source githup site](https://github.com/Estimote/Android-SDK/releases)
+* [aar download site](https://jcenter.bintray.com/com/estimote/sdk/)
 
+### 코드 적용
+```Android
+public class MainActivity extends AppCompatActivity {
+    BeaconManager mBeaconManager;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        mBeaconManager = new BeaconManager(this);
+        mBeaconManager.connect(new BeaconManager.ServiceReadyCallback() {
+            @Override
+            public void onServiceReady() {
+                mBeaconManager.startRanging(new Region("ranged region", UUID.fromString("73CB035B-8A0A-47C6-975E-2D24DA2FC927"), null, null));
+            }
+        });
+        mBeaconManager.setRangingListener(new BeaconManager.RangingListener() {
+            @Override
+            public void onBeaconsDiscovered(Region region, List<Beacon> list) {
+            }
+        });
+    }
+}
+```
+
+### 특징
+* manifest에서 permission, service 설정할 필요 없음 (aar에 포함되어있음)
+* BeaconManager 객체 생성후(싱글턴 아님) connect() 호출시 callback으로 onServiceReady() 호출됨
+* setRanging() 설정 후 startRanging() 호출시 1초마다 onBeaconsDiscovered() 콜백 호출됨
+* background 스캔 가능하며, Applicaton쪽에서 가이드 해주고 있음
