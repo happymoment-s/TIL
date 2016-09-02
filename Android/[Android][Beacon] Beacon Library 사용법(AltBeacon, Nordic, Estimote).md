@@ -66,7 +66,9 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
 * 스캔시 1초마다 didDetermineStateForRegion()에 비콘신호 올라옴
 * Nordic 라이브러리와 매우 유사(함수명까지)
 * BeaconManager 싱글턴으로 객체 생성후 bind 하면 callback으로 onBeaconServiceConnect() 호출됨
-* background 스캔 적용시 Application단에서 구현하면 됨(체크 필요)   
+* background 스캔 적용시 Application단에서 구현하면 됨(체크 필요)
+
+
 ---
 
 
