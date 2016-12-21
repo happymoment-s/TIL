@@ -1,7 +1,7 @@
 # SonarQube 적용하기
 
-## 설정
-### 서버 설정
+
+## Windows에서 서버 설정
 * mysql 설치 [http://dev.mysql.com/downloads/mysql/](http://dev.mysql.com/downloads/mysql/)  
   user 설정 (IDENTIFIED가 비밀번호)
 ```
@@ -29,16 +29,67 @@ sonar.jdbc.validationQuery=select 1
   C:\SonarQube\sonarqube-5.4\bin\windows-x86-64 -> InstallNTService.bat -> StartNTService.bat -> StartSonar.bat 실행 -> 웹에서 [http://localhost:9000/](http://localhost:9000/) 실행시 웹페이지 확인가능
 * 초기 실행시 admin/admin 으로 로그인 가능
 
-### sonar 서버 실행시 문제
+## Linux에서 서버 설정
+* java 8.0 = sonarqube 5.6 이상  / java 7.0 = sonarqube 5.5 이하로 설치해야함
+```linux
+wget https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-5.5.zip
+unzip sonarqube-5.5.zip
+mv sonarqube-5.5 /opt/
+```
+* config db 설정은 Windows와 동일 / web 설정은 아래와  같이
+```
+$cd /opt/sonarqube-5.1/conf
+$vi sonar.properties
+
+sonar.web.host=0.0.0.0
+sonar.web.context=/sonar
+sonar.web.port=9000
+```
+* 서버 시작
+```
+$cd /opt/sonarqube-5.1/bin
+$cd linux-x86-64
+$./sonar.sh start
+```
+* Linux Service로 등록 방법  
+  sonar.sh를 etc/init.d/sonar에 이동 > 파일에서 다음과 같이 설정
+```
+sudo cp /opt/sonar/bin/linux-x86-64/sonar.sh /etc/init.d/sonar
+sudo vi /etc/init.d/sonar
+
+SONAR_HOME=/opt/sonarqube-5.6.4
+PLATFORM=linux-x86-64
+
+WRAPPER_CMD="${SONAR_HOME}/bin/${PLATFORM}/wrapper"
+WRAPPER_CONF="${SONAR_HOME}/conf/wrapper.conf"
+...
+PIDDIR="/var/run"
+```
+* register service
+```
+sudo update-rc.d -f sonar remove
+sudo chmod 755 /etc/init.d/sonar
+sudo update-rc.d sonar defaults
+```
+* 로그 확인
+```
+vi /opt/sonarqube-5.5/logs/sonar.log
+```
+* 포트 연결 확인
+```
+netstat -anp | grep LISTEN
+```
+
+## sonar 서버 실행시 문제
 * http://localhost:9000/ 실행시 'SonarQube is under maintenance' 표시   
   -> [http://127.0.0.1:9000/setup](http://127.0.0.1:9000/setup) 에서 mysql 업데이트 후 해결
 
-### sonar 서버에 Plugin 설정
+## sonar 서버에 Plugin 설정
 * 웹 페이지 -> 상단 Administration -> System -> update Center -> avaliable -> 원하는 플러그인 설치 -> 서버 재실행   
   필자는 git, github, java, android, korean pack 설치
 
 
-### Android Studio 설정 
+## Android Studio 설정 
 * build.gradle 설정
 ```
 apply plugin: "sonar-runner"
@@ -65,3 +116,5 @@ sonarRunner {
 ## 참고사이트
 * [SonarQube로 Android App을 분석하는 방법](https://www.davidlab.net/ko/tech/how-to-analyze-android-code-with-sonarqube/)
 * [소나 설치 방법(windows)](http://galmaegi74.tistory.com/4)
+* [ubuntu install](http://dev.mamikon.net/installing-sonarqube-on-ubuntu/)
+* [우분투에 SonarQube 설치하기](http://wowzoo.blogspot.kr/2015/05/sonarqube.html)
