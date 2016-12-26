@@ -5,7 +5,10 @@
 * SonarQube 5.5 이하 -> Java 7.0
 * SonarQube 5.x -> mysql 5.6
 * SonarQube 4.x -> mysql 5.5
+
 <br /><br />
+
+
 ## Windows에서 서버 설정 (로컬환경)
 * mysql 설치 [http://dev.mysql.com/downloads/mysql/](http://dev.mysql.com/downloads/mysql/)  
   user 설정 (IDENTIFIED가 비밀번호)
