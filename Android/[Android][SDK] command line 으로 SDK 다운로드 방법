@@ -1,0 +1,15 @@
+# Android SDK Download on the command line
+
+## 적용
+* list 확인
+```
+android list sdk --all
+```
+
+* 다운로드
+```
+android update sdk -u -a -t 1,2,3,4,..,n
+```
+
+## 참고사이트
+* [how-to-install-android-sdk-build-tools-on-the-command-line](http://stackoverflow.com/questions/17963508/how-to-install-android-sdk-build-tools-on-the-command-line)
