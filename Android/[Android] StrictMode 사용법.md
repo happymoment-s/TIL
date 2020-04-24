@@ -7,6 +7,13 @@ w
 
 ## 적용방법
 ```JAVA
+asd
+
+
+d
+d
+
+
 StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
         .detectDiskReads()
         .detectDiskWrites()
@@ -23,6 +30,11 @@ StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
 
 ## 샘플
 ```
+
+d
+d
+d
+
 D/StrictMode: StrictMode policy violation; ~duration=18 ms: android.os.StrictMode$StrictModeDiskReadViolation: policy=65543 violation=2
     at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1263)
     at android.app.SharedPreferencesImpl.awaitLoadedLocked(SharedPreferencesImpl.java:203)
@@ -38,6 +50,13 @@ D/StrictMode: StrictMode policy violation; ~duration=18 ms: android.os.StrictMod
     at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:620)
 ```
 
+d
+
+d
+d
+
+d
+
 ## 참고사이트
 
 da
@@ -48,6 +67,11 @@ d
 d
 w
 
+d
+
+
+ds
+dd
 
 
 
