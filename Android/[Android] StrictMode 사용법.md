@@ -1,7 +1,9 @@
 # StrictMode 사용법
 
 ## 적용방법
-```JAVA
+```JAVAdasdsad
+
+
 StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
         .detectDiskReads()
         .detectDiskWrites()
@@ -17,6 +19,8 @@ StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
 ```
 
 ## 샘플
+JAVAdasdsad
+asd
 ```
 D/StrictMode: StrictMode policy violation; ~duration=18 ms: android.os.StrictMode$StrictModeDiskReadViolation: policy=65543 violation=2
     at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1263)
@@ -32,6 +36,13 @@ D/StrictMode: StrictMode policy violation; ~duration=18 ms: android.os.StrictMod
     at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:730)
     at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:620)
 ```
+
+
+
+JAVAdasdsad
+
+d
+d
 
 ## 참고사이트
 
